@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  my-favorite-star:
+    build:
+      context: .
+    volumes:
+      - ./templates:/templates
+    ports:
+      - 80:5000
+  mongo: # 몽고 db를 연결하고 싶으니까 mongo 를 타이핑
+    image: mongo:latest
+    volumes: # 이미지의 볼륨을 mongo:/data/db로 설정
+      - mongo:/data/db
+    ports:
+      - 27017:27017
+
+volumes: # 몽고db의 데이터를 유지시킬 볼륨이 필요해서 설정
+  mongo:
