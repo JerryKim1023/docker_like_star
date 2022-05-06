@@ -2,10 +2,10 @@ version: "3.9"
 
 services:
   my-favorite-star:
-    build:
-      context: .
-    volumes:
-      - ./templates:/templates
+#    build:
+#      context: .
+#빌드를 없애고 이미지를 다운받아서 사용
+    image: ecec1023/my-favorite-star:latest
     ports:
       - 80:5000
   mongo: # 몽고 db를 연결하고 싶으니까 mongo 를 타이핑
